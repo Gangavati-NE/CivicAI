@@ -10,7 +10,7 @@ const CivicFeed = () => {
   const [userLocation, setUserLocation] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/complaints')
+    fetch('https://civicai-3oq2.onrender.com/api/complaints')
       .then(response => response.json())
       .then(data => {
         setComplaints(data)
@@ -26,7 +26,7 @@ const CivicFeed = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/complaints/${id}/confirm`,
+        `https://civicai-3oq2.onrender.com/api/complaints/${id}/confirm`,
         {
           method: 'POST',
         },
@@ -277,6 +277,7 @@ const CivicFeed = () => {
 }
 
 export default CivicFeed
+
 
 
 

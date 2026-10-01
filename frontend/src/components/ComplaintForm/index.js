@@ -26,7 +26,7 @@ const ComplaintForm = () => {
         formData.append('image', image)
 
         const uploadResponse = await fetch(
-          'http://localhost:5000/api/upload',
+          'https://civicai-3oq2.onrender.com/api/upload',
           {
             method: 'POST',
             body: formData,
@@ -43,7 +43,7 @@ const ComplaintForm = () => {
         setMessage('AI is analyzing your evidence...')
 
         const imageAnalysisResponse = await fetch(
-          'http://localhost:5000/api/ai/analyze-image',
+          'https://civicai-3oq2.onrender.com/api/ai/analyze-image',
           {
             method: 'POST',
             body: formData,
@@ -59,7 +59,7 @@ const ComplaintForm = () => {
       setMessage('Saving your complaint...')
 
       const response = await fetch(
-        'http://localhost:5000/api/complaints',
+        'https://civicai-3oq2.onrender.com/api/complaints',
         {
           method: 'POST',
           headers: {
@@ -255,5 +255,6 @@ const ComplaintForm = () => {
 }
 
 export default ComplaintForm
+
 
 
