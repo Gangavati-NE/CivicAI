@@ -10,7 +10,7 @@ const App = () => {
   const [complaints, setComplaints] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/complaints')
+    fetch('https://civicai-3oq2.onrender.com/api/complaints')
       .then(response => response.json())
       .then(data => setComplaints(data))
       .catch(error => console.log(error))
@@ -223,3 +223,4 @@ const App = () => {
 }
 
 export default App
+
