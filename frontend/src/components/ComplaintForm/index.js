@@ -10,7 +10,6 @@ const ComplaintForm = () => {
   const [message, setMessage] = useState('')
   const [submittedComplaint, setSubmittedComplaint] = useState(null)
   const [submitting, setSubmitting] = useState(false)
-  const [coordinates, setCoordinates] = useState(null)
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -255,6 +254,7 @@ const ComplaintForm = () => {
 }
 
 export default ComplaintForm
+
 
 
 

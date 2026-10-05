@@ -7,7 +7,7 @@ const CivicFeed = () => {
   const [activeTab, setActiveTab] = useState('For You')
   const [loading, setLoading] = useState(true)
   const [confirmedIds, setConfirmedIds] = useState([])
-  const [userLocation, setUserLocation] = useState(null)
+  const [userLocation] = useState(null)
 
   useEffect(() => {
     fetch('https://civicai-3oq2.onrender.com/api/complaints')
@@ -277,6 +277,8 @@ const CivicFeed = () => {
 }
 
 export default CivicFeed
+
+
 
 
 
