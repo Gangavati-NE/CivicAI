@@ -11,7 +11,7 @@ const AuthorityDashboard = () => {
   const loadComplaints = () => {
     setLoading(true)
 
-    fetch('http://localhost:5000/api/complaints')
+    fetch('https://civicai-3oq2.onrender.com/api/complaints')
       .then(response => response.json())
       .then(data => {
         setComplaints(data)
@@ -196,7 +196,7 @@ const AuthorityDashboard = () => {
                 value={complaint.status}
                 onChange={event => {
                   fetch(
-                    `http://localhost:5000/api/complaints/${complaint._id}/status`,
+                    `https://civicai-3oq2.onrender.com/api/complaints/${complaint._id}/status`,
                     {
                       method: 'PUT',
                       headers: {
@@ -232,3 +232,4 @@ const AuthorityDashboard = () => {
 }
 
 export default AuthorityDashboard
+
