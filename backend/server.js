@@ -82,7 +82,23 @@ app.get('/api/complaints', async (req, res) => {
   try {
     const complaints = await Complaint.find().sort({createdAt: -1})
 
-    res.json(complaints)
+    const updatedComplaints = complaints.map(complaint => {
+      const data = complaint.toObject()
+
+      if (
+        data.imageUrl &&
+        data.imageUrl.startsWith('http://localhost:5000/uploads/')
+      ) {
+        data.imageUrl = data.imageUrl.replace(
+          'http://localhost:5000/uploads/',
+          'https://civicai-3oq2.onrender.com/uploads/',
+        )
+      }
+
+      return data
+    })
+
+    res.json(updatedComplaints)
   } catch (error) {
     console.log(error)
 
@@ -91,7 +107,6 @@ app.get('/api/complaints', async (req, res) => {
     })
   }
 })
-
 app.put('/api/complaints/:id/status', async (req, res) => {
   const {status} = req.body
 
