@@ -122,7 +122,7 @@ app.put('/api/complaints/:id/status', async (req, res) => {
 })
 
 app.post('/api/complaints', async (req, res) => {
- const {description, category: selectedCategory, location, imageUrl, aiAnalysis} = req.body
+ const {description, category: selectedCategory, location, imageUrl, aiAnalysis, latitude, longitude} = req.body
   if (!description) {
     return res.status(400).json({
       message: 'Complaint description is required',
@@ -410,6 +410,7 @@ app.post('/api/complaints/:id/confirm', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`CivicAI server running on port ${PORT}`)
 })
+
 
 
 
