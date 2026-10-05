@@ -132,7 +132,7 @@ app.post('/api/complaints', async (req, res) => {
 
 if (imageUrl) {
   try {
-    const imagePath = imageUrl.replace('http://localhost:5000/uploads/', '')
+    const imagePath = imageUrl.replace('https://civicai-3oq2.onrender.com/uploads/', '')
     const fullImagePath = path.join(uploadDir, imagePath)
 
     const imageBuffer = fs.readFileSync(fullImagePath)
@@ -374,7 +374,7 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
   res.json({
   message: 'Image uploaded successfully 🚀',
   filename: req.file.filename,
-  imageUrl: `http://localhost:5000/uploads/${req.file.filename}`,
+  imageUrl: `https://civicai-3oq2.onrender.com/uploads/${req.file.filename}`,
 })
 })
 
@@ -410,6 +410,7 @@ app.post('/api/complaints/:id/confirm', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`CivicAI server running on port ${PORT}`)
 })
+
 
 
 
