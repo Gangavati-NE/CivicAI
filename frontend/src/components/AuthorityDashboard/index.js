@@ -17,7 +17,7 @@ const AuthorityDashboard = () => {
         setComplaints(data)
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch(error => { console.error('Authority Dashboard error:', error); setLoading(false) })
   }
 
   useEffect(() => {
@@ -232,4 +232,5 @@ const AuthorityDashboard = () => {
 }
 
 export default AuthorityDashboard
+
 
